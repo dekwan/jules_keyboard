@@ -1,0 +1,171 @@
+:root {
+    --key-bg-white: #FFFFFF;
+    --key-bg-green: #C2D1C8;
+    --key-bg-pink: #E8B4B8;
+    --case-bg: #EAEAEA;
+    --key-text-color: #333333;
+}
+
+body {
+    background-color: var(--case-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    padding: 20px;
+}
+
+.keyboard {
+    background-color: #F6F6F6;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #BDBDBD;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.key {
+    width: 50px;
+    height: 50px;
+    background-color: var(--key-bg-white);
+    border: 1px solid #E0E0E0;
+    border-bottom: 3px solid #BDBDBD;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--key-text-color);
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.07s ease-in-out;
+    padding: 4px;
+}
+
+.key:active {
+    transform: translateY(2px);
+    border-bottom-width: 1px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+.key span {
+    text-align: center;
+    line-height: 1.2;
+}
+
+.key span:first-child:not(:last-child) {
+    font-size: 10px;
+    font-weight: 400;
+    color: #666;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+.key > span:only-child {
+    font-size: 14px;
+    font-weight: 500;
+    position: static;
+    text-align: center;
+}
+
+
+/* Color variations */
+.key.green {
+    background-color: var(--key-bg-green);
+}
+
+.key.pink {
+    background-color: var(--key-bg-pink);
+}
+
+/* Size variations */
+.key.backspace {
+    flex-grow: 2.5;
+}
+
+.key.tab {
+    flex-grow: 1.5;
+}
+
+.key.caps {
+    flex-grow: 1.8;
+}
+
+.key.enter {
+    flex-grow: 2.2;
+}
+
+.key.shift {
+    flex-grow: 2.3;
+}
+
+.key.shift-right {
+    flex-grow: 1.7;
+}
+
+.key.space {
+    flex-grow: 8;
+}
+
+.key.ctrl {
+    flex-grow: 1.25;
+}
+
+.key.win, .key.alt {
+    flex-grow: 1.25;
+}
+
+.key.fn {
+    flex-grow: 1.25;
+}
+
+.backslash {
+    flex-grow: 1.5;
+}
+
+.knob-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+}
+
+.knob {
+    width: 45px;
+    height: 45px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1), 0 2px 2px rgba(0,0,0,0.2);
+    position: relative;
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(250, 250, 250, 0.1)));
+}
+
+.knob::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: var(--key-bg-pink);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--key-bg-pink);
+}
